@@ -51,6 +51,9 @@ include Makefile.impls
 #
 
 MAL_IMPL = js
+IMPLS = js
+
+js_STEP_TO_PROG = mylang/$($(1)).js
 
 # Path to loccount for counting LOC stats
 LOCCOUNT = loccount

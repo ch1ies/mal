@@ -6,6 +6,7 @@ var HISTORY_FILE = require('path').join(process.env.HOME, '.mal-history');
 
 var rlwrap = {}; // namespace for this module in web context
 
+// 引入 c++ 的动态链接库
 var ffi = require('ffi-napi'),
     fs = require('fs');
 
@@ -32,6 +33,7 @@ exports.readline = rlwrap.readline = function(prompt) {
     }
 
     var line = rllib.readline(prompt);
+    console.log(line, 'line--')
     if (line) {
         rllib.add_history(line);
         try {
